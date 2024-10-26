@@ -1,7 +1,15 @@
+using Animals_farming_managment_system.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AnimalFarmingDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("AnimalFarmingPortal")));
+
 
 var app = builder.Build();
 
