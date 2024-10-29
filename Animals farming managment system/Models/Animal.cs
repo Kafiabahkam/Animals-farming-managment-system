@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Animals_farming_managment_system.Models
 {
@@ -10,11 +12,12 @@ namespace Animals_farming_managment_system.Models
         public int Age { get; set; }
         public double Weight { get; set; }
         public string HealthStatus { get; set; }
-        public ICollection<FeedingSchedule> FeedingSchedules
+        public List<FeedingSchedule> FeedingSchedules
         {
             get; set;
         }
-        public ICollection<HealthRecord> HealthRecords { get; set; }
+        public List<HealthRecord> HealthRecords { get; set; }
+        [Required]
         public int BarnId { get; set; }
         public Barn Barn { get; set; }
     }

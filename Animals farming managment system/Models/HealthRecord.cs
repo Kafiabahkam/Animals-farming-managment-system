@@ -1,4 +1,6 @@
-﻿namespace Animals_farming_managment_system.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Animals_farming_managment_system.Models
 {
     public class HealthRecord
     {
@@ -8,11 +10,11 @@
         public string Treatment { get; set; }
         public string VetName { get; set; }
 
-
+        [Required]
         public int AnimalId { get; set; }
         public Animal Animal { get; set; }
 
-        
-    
+
+
     }
 }
